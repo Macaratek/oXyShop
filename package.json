@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Macaratek/my-github-repo.git"
+    "url": "https://github.com/Macaratek/oXyShop.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,6 +14,20 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "browser-sync": "^2.26.14",
+    "del": "^6.0.0",
+    "function": "^0.6.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cleancss": "^0.2.2",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-postcss": "^9.0.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "gulp-terser": "^2.0.1"
+  },
+  "dependencies": {
+    "bootstrap": "^4.6.0"
   }
 }
