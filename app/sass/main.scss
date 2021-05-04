@@ -1,0 +1,145 @@
+//Přednastavení barevného spektra pro formulář
+$font-color-st: #3a207a;
+$font-color-nd: #5a5065;
+$border-color: #e5e1eb;
+$bg-color-st: #dbd5e3;
+$bg-color-nd: #99ca1a;
+
+//Zlomový bod pro odsazení potvrzovacího tlačítka zprava
+$breakpoint-btn-margin: 1024px;
+
+//stanovení parametrů pro font buttonů
+@mixin btn-font {
+    font-weight: bold;
+    font-size: 0.8rem;
+    line-height: 32px;
+    text-transform: uppercase;
+}
+
+body {
+    font-family: "Helvetica", Arial, sans-serif;
+    color: $font-color-st;
+    //Obalující element pro celý obsah stránky s jeho vycentrováním
+    .container {
+        margin: 150px auto;
+        box-sizing: border-box;
+
+        //Hlavní nadpis obsahu stránky
+        h1 {
+            font-weight: bold;
+            letter-spacing: -1px;
+            margin-bottom: 2rem;
+        }
+
+        //Obalující element formuláře se stínem okolo
+        .form-wrapper {
+            border-radius: 5px;
+            box-shadow: 0 0px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        //Mezery okolo skupiny inputů ve formuláři
+        .contact-inputs {
+            padding: 30px 30px 60px;
+        }
+
+        //Vycentrování nadpisu formuláře
+        .flex-center {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: auto;
+        }
+
+        //Obalovací prvek pro nadpis formuláře
+        .heading-wrapper {
+            height: 100px;
+            padding: 30px;
+            background-color: $bg-color-st;
+            border-radius: 5px 5px 0 0;
+            h4 {
+                font-size: 1.25rem;
+                font-weight: bold;
+                margin-bottom: 0px;
+            }
+        }
+
+        //Odsazení textu od checkboxu
+        .checkbox {
+            margin-right: 10px;
+        }
+
+        //Stylizace souhlasu s podmínkami
+        .terms-agreement {
+            margin: 30px 0px 60px;
+
+            a {
+                color: $font-color-st;
+                text-decoration: underline;
+            }
+        }
+
+        //Definování stylů tlačítek
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            box-sizing: border-box;
+            margin: 0px;
+
+            //Tlačítko VYMAZAT FORMULÁŘ
+            .btn-reset {
+                @include btn-font;
+                color: $font-color-nd;
+                box-shadow: 0 0px 40px rgba(0, 0, 0, 0.12);
+            }
+
+            //Tlačítko DOKONČIT OBJEDNÁVKU
+            .btn-submit {
+                @include btn-font;
+                color: #fff;
+                border: 1px solid $bg-color-nd;
+                background-color: $bg-color-nd;
+                letter-spacing: 0;
+
+                @media (min-width: 1024px) {
+                    &.btn-submit {
+                        margin-right: 20px;
+                    }
+                }
+            }
+
+            //.btn-submit {
+            //    letter-spacing: 0;
+            //}
+
+            .btn-submit:active,
+            .btn-submit:focus,
+            .btn-submit:hover {
+                box-shadow: none;
+                outline: 0;
+                letter-spacing: 1px;
+
+                @media (min-width: 768px) {
+                    &.btn-submit {
+                        letter-spacing: 5px;
+                    }
+                }
+            }
+
+            .btn-submit:active {
+                background-color: $bg-color-nd;
+                border: 1px solid $bg-color-nd;
+            }
+
+            .btn-submit:focus {
+                background-color: $bg-color-st;
+                border: 4px solid $font-color-st;
+            }
+
+            .btn-submit:hover {
+                background-color: $font-color-st;
+                border: 4px solid $font-color-st;
+            }
+        }
+    }
+}
