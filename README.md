@@ -1,9 +1,7 @@
 # oXyShop
 Modelový úkol k pohovoru
 
-Install & Execute
+Stránka se otevře pomocí Enviroments/GitHub Pages/poslední verze github pages/view deployment
 
-npm install
-npm start
 
-(dev server starts at localhost:3000)
+
