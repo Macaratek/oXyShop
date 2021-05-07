@@ -5,26 +5,19 @@ const uglify = require('gulp-uglify');
 const browserSync = require('browser-sync').create();
 const ghPages = require('gulp-gh-pages');
 
-// MINIFY CSS TASK USING `cleanCSS`
+// MINIFY CSS 
 gulp.task('minify-css', () => {
-    //  provide path to CSS files
-    return gulp.src('app/sass/main.scss')
-        //  use cleanCSS plugin on `gulp.src` and
-        //  set compatibility for IE 
+        return gulp.src('app/sass/main.scss')
         .pipe(rename('main.min.css'))
         .pipe(cleanCSS({ compatibility: '*' }))
-        //  save result to destination path
         .pipe(gulp.dest('./css'));
 });
 
-// MINIFY JS TASK USING `uglify`
+// MINIFY JS
 gulp.task('uglify-js', () => {
-    // provide path to Js files
     return gulp.src('app/js/script.js')
-        //  use uglify plugin on `gulp.src`
         .pipe(rename('script.min.js'))
         .pipe(uglify())
-        //  save result to destination path
         .pipe(gulp.dest('./js'));
 });
 
