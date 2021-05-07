@@ -29,20 +29,20 @@ gulp.task('uglify-js', () => {
 });
 
 // Watch for file changes
-gulp.task('browserSync', () => {
-    browserSync.init({
-        server: {
-            baseDir: 'app'
-        },
-    })
-    gulp.watch('./sass/*.scss', minify - css).on('change', browserSync.reload);
-    gulp.watch('./*.html').on('change', browserSync.reload);
-    gulp.watch('./js/*.js').on('change', browserSync.reload);
-})
+//gulp.task('browserSync', () => {
+    //browserSync.init({
+    //    server: {
+    //        baseDir: 'app'
+    //    },
+    //})
+    //gulp.watch('./sass/*.scss', minify - css).on('change', browserSync.reload);
+    //gulp.watch('./*.html').on('change', browserSync.reload);
+    //gulp.watch('./js/*.js').on('change', browserSync.reload);
+//})
 
 gulp.task('deploy', () => {
     return gulp.src('./dist/')
         .pipe(ghPages());
 });
 
-gulp.task('default', ['minify-css', 'uglify-js', 'browserSync', 'deploy']);
+gulp.task('default', ['minify-css', 'uglify-js', 'deploy']);
